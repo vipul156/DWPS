@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -52,11 +53,13 @@ export default function Gallery() {
               >
                 {galleryImages.map((src, index) => (
                   <SwiperSlide key={index}>
-                    <div className="topper-block-two w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:-translate-y-2 transition-transform duration-300">
-                      <img
+                    <div className="relative topper-block-two w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:-translate-y-2 transition-transform duration-300">
+                      <Image
                         src={src}
                         alt="Gallery Event"
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, 50vw"
                       />
                     </div>
                   </SwiperSlide>

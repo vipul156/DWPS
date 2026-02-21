@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FaAngleDoubleRight } from "react-icons/fa";
 
 export default function About() {
@@ -54,9 +55,11 @@ export default function About() {
               {/* Play Button Overlay */}
               <figure className="image image-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 bg-white rounded-full p-2 shadow-[0_0_30px_rgba(245,166,35,0.4)] animate-pulse hover:animate-none hover:scale-110 transition-transform">
                 <a href="https://www.youtube.com/watch?v=z7ZoVfex2LM" target="_blank" rel="noopener noreferrer" className="block w-16 h-16 md:w-20 md:h-20 bg-[#F5A623] rounded-full flex items-center justify-center">
-                  <img
+                  <Image
                     src="https://www.dwpsgrnoida.com/public/assets/images/icons/play-profile.svg"
                     alt="Play Video"
+                    width={32}
+                    height={32}
                     className="w-8 ml-2"
                   />
                 </a>

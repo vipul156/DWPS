@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { HiCalendar, HiArrowRight } from "react-icons/hi";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -94,21 +95,22 @@ export default function NewsEvents() {
               >
                 <div className="flex gap-0">
                   <div className="relative w-44 flex-shrink-0 hidden sm:block">
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 640px) 0vw, 176px"
+                      className="object-cover"
                     />
                     <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-colors" />
                   </div>
                   <div className="flex-1 p-6">
                     <div className="flex items-center gap-3 mb-3">
                       <span
-                        className={`text-xs font-medium font-rubik px-2.5 py-1 rounded-full ${
-                          item.type === "event"
+                        className={`text-xs font-medium font-rubik px-2.5 py-1 rounded-full ${item.type === "event"
                             ? "bg-orange/10 text-orange"
                             : "bg-primary/10 text-primary"
-                        }`}
+                          }`}
                       >
                         {item.category}
                       </span>

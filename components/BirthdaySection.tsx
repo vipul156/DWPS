@@ -38,7 +38,7 @@ export default function BirthdaySection() {
                 {/* Title Area */}
                 <div className="text-center relative mb-8">
                     <div className="flex justify-center mb-2">
-                        <img src="https://www.dwpsgrnoida.com/public/assets/images/icons/birthday-flag.svg" alt="Birthday Flag" className="h-12 w-auto" />
+                        <Image src="https://www.dwpsgrnoida.com/public/assets/images/icons/birthday-flag.svg" alt="Birthday Flag" width={48} height={48} className="h-12 w-auto" />
                     </div>
                     <p className="text-[#00693E] font-bold tracking-widest text-sm uppercase">WISH YOU A VERY</p>
                     <h3 className="text-3xl font-extrabold text-[#005331] uppercase mt-1 mb-1">HAPPY BIRTHDAY</h3>
@@ -50,11 +50,13 @@ export default function BirthdaySection() {
 
                     {/* Card Layout */}
                     <div className="bg-[#FAF9F6] border-2 border-[#00693E] rounded-2xl p-6 text-center shadow-xl relative z-10 mx-auto w-full">
-                        <div className="w-24 h-24 mx-auto border-4 border-[#F5A623] rounded-full overflow-hidden mb-4 bg-white shadow-inner">
-                            <img
+                        <div className="relative w-24 h-24 mx-auto border-4 border-[#F5A623] rounded-full overflow-hidden mb-4 bg-white shadow-inner">
+                            <Image
                                 src={birthdays[currentIndex].image}
                                 alt={birthdays[currentIndex].name}
-                                className="w-full h-full object-cover"
+                                fill
+                                className="object-cover"
+                                sizes="96px"
                             />
                         </div>
                         <h4 className="text-xl font-bold text-[#005331]">{birthdays[currentIndex].name}</h4>
@@ -80,13 +82,13 @@ export default function BirthdaySection() {
 
                     {/* Decorative Elements */}
                     <div className="absolute -left-16 -top-12 z-0 animate-bounce" style={{ animationDuration: '3s' }}>
-                        <img src="https://www.dwpsgrnoida.com/public/assets/images/icons/balloon-left.svg" alt="Balloon Left" className="w-20" />
+                        <Image src="https://www.dwpsgrnoida.com/public/assets/images/icons/balloon-left.svg" alt="Balloon Left" width={80} height={100} className="w-20 h-auto" />
                     </div>
                     <div className="absolute -right-16 -top-8 z-0 animate-bounce" style={{ animationDuration: '3.5s' }}>
-                        <img src="https://www.dwpsgrnoida.com/public/assets/images/icons/balloon-right.svg" alt="Balloon Right" className="w-24" />
+                        <Image src="https://www.dwpsgrnoida.com/public/assets/images/icons/balloon-right.svg" alt="Balloon Right" width={96} height={120} className="w-24 h-auto" />
                     </div>
                     <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20 transform -rotate-12">
-                        <img src="https://www.dwpsgrnoida.com/public/assets/images/icons/birthday-cap.svg" alt="Birthday Cap" className="w-12" />
+                        <Image src="https://www.dwpsgrnoida.com/public/assets/images/icons/birthday-cap.svg" alt="Birthday Cap" width={48} height={48} className="w-12 h-auto" />
                     </div>
 
                 </div>

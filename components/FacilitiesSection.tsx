@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -104,10 +105,12 @@ export default function FacilitiesSection() {
                             <SwiperSlide key={fac.id}>
                                 <Link href={`/${fac.href}`} className="block group/card h-[400px] relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
                                     <div className="absolute inset-0 w-full h-full">
-                                        <img
+                                        <Image
                                             src={fac.image}
                                             alt={fac.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
+                                            fill
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                            className="object-cover transition-transform duration-700 group-hover/card:scale-110"
                                         />
                                     </div>
                                     {/* Gradient Overlay */}

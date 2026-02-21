@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -80,9 +81,9 @@ export default function AchievementsBirthdaySection() {
                                         {achievements.map((item) => (
                                             <SwiperSlide key={item.id}>
                                                 <div className="achi-block-two rounded-2xl overflow-hidden shadow-md group border border-gray-100 relative">
-                                                    <a href={item.link} className="block relative h-full">
-                                                        <div className="h-[250px] overflow-hidden">
-                                                            <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                                    <Link href={item.link} className="block relative h-full">
+                                                        <div className="relative h-[250px] overflow-hidden">
+                                                            <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 50vw" />
                                                         </div>
                                                         <div className="absolute top-4 left-4 bg-[#F5A623] text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider shadow-sm">
                                                             New
@@ -92,7 +93,7 @@ export default function AchievementsBirthdaySection() {
                                                                 {item.title}
                                                             </h6>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </SwiperSlide>
                                         ))}
@@ -109,9 +110,9 @@ export default function AchievementsBirthdaySection() {
                             </div>
 
                             <div className="ach-text text-center mt-8 pt-6 border-t border-gray-100">
-                                <a href="https://www.dwpsgrnoida.com/achievements" className="inline-flex items-center gap-2 text-[#00693E] hover:text-[#F5A623] font-bold uppercase tracking-widest transition-colors text-sm">
+                                <Link href="/achievements" className="inline-flex items-center gap-2 text-[#00693E] hover:text-[#F5A623] font-bold uppercase tracking-widest transition-colors text-sm">
                                     VIEW ALL ACHIEVEMENTS <FaAngleDoubleRight />
-                                </a>
+                                </Link>
                             </div>
 
                         </div>
@@ -124,7 +125,7 @@ export default function AchievementsBirthdaySection() {
                             {/* Title Area */}
                             <div className="title text-center mb-8 relative z-30">
                                 <div className="flex justify-center mb-2">
-                                    <img src="https://www.dwpsgrnoida.com/public/assets/images/icons/birthday-flag.svg" alt="Birthday Flag" className="h-10 w-auto" />
+                                    <Image src="https://www.dwpsgrnoida.com/public/assets/images/icons/birthday-flag.svg" alt="Birthday Flag" width={40} height={40} className="h-10 w-auto" />
                                 </div>
                                 <p className="text-[#00693E] font-bold tracking-widest text-sm uppercase">WISH YOU A VERY</p>
                                 <h3 className="text-3xl md:text-4xl font-extrabold text-[#005331] uppercase mt-1 mb-1 drop-shadow-sm">HAPPY BIRTHDAY</h3>
@@ -149,11 +150,13 @@ export default function AchievementsBirthdaySection() {
                                         {birthdays.map((bday, i) => (
                                             <SwiperSlide key={i}>
                                                 <div className="birthday-block-two">
-                                                    <div className="w-24 h-24 mx-auto border-4 border-[#F5A623] rounded-full overflow-hidden mb-4 bg-white shadow-inner">
-                                                        <img
+                                                    <div className="relative w-24 h-24 mx-auto border-4 border-[#F5A623] rounded-full overflow-hidden mb-4 bg-white shadow-inner">
+                                                        <Image
                                                             src={bday.image}
                                                             alt={bday.name}
-                                                            className="w-full h-full object-cover"
+                                                            fill
+                                                            className="object-cover"
+                                                            sizes="96px"
                                                         />
                                                     </div>
                                                     <h4 className="text-xl font-bold text-[#005331] mb-1">{bday.name}</h4>
@@ -177,13 +180,13 @@ export default function AchievementsBirthdaySection() {
 
                                 {/* Decorative Elements */}
                                 <div className="absolute -left-16 -top-12 z-0 animate-[bounce_3s_infinite]">
-                                    <img src="https://www.dwpsgrnoida.com/public/assets/images/icons/balloon-left.svg" alt="Balloon Left" className="w-20 opacity-80" />
+                                    <Image src="https://www.dwpsgrnoida.com/public/assets/images/icons/balloon-left.svg" alt="Balloon Left" width={80} height={100} className="w-20 opacity-80 h-auto" />
                                 </div>
                                 <div className="absolute -right-16 -top-8 z-0 animate-[bounce_3.5s_infinite]">
-                                    <img src="https://www.dwpsgrnoida.com/public/assets/images/icons/balloon-right.svg" alt="Balloon Right" className="w-24 opacity-80" />
+                                    <Image src="https://www.dwpsgrnoida.com/public/assets/images/icons/balloon-right.svg" alt="Balloon Right" width={96} height={120} className="w-24 opacity-80 h-auto" />
                                 </div>
                                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20 transform -rotate-12">
-                                    <img src="https://www.dwpsgrnoida.com/public/assets/images/icons/birthday-cap.svg" alt="Birthday Cap" className="w-12 drop-shadow-lg" />
+                                    <Image src="https://www.dwpsgrnoida.com/public/assets/images/icons/birthday-cap.svg" alt="Birthday Cap" width={48} height={48} className="w-12 drop-shadow-lg h-auto" />
                                 </div>
 
                             </div>
