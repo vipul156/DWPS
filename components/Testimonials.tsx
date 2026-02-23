@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { BsQuote } from "react-icons/bs";
 
